@@ -34,7 +34,7 @@ endif;?>
          //search recipe by name
           if(isset($_POST['find_by_name'])) {
             $name = $_POST['recipe_name'];
-            $sql = "SELECT * FROM `recpie` WHERE `recpie`.`name` = '$name'";
+            $sql = "SELECT * FROM `recpie` WHERE `recpie`.`name` LIKE '$name%'";
             //no recipe with input name in the database
             if (!($conn->query ($sql))){
               ?>
